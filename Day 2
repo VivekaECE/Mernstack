@@ -1,0 +1,73 @@
+let a =1/0;
+console.log(a);
+let b=10n;
+console.log(b,typeof b);
+let num1=10;
+let num2=40;
+let num3=num1+num2;
+console.log("addition of two numbers"+ num1+"and"+num2+"="+num3);
+let xtr;
+console.log(xtr);
+let obj=null;
+console.log(obj);
+console.log(sece);
+var sece='college';
+//object
+const user=Object.freeze({
+    name:'vive',
+    age:20,
+    dep:'Ece',
+});
+user.schl='ejnjfb';
+console.log(user);
+console.log(user.age);
+delete user.age;
+console.log(user);
+
+const user1=Object.keys({
+    name:'vive',
+    age:20,
+});
+console.log(user1);
+
+const details={
+   // addressL:{
+        street:'second street',
+        city:'coimbatore'
+   // }
+};
+console.log(details?.addressL?.city);
+
+function sum(n1,n2){
+    if(typeof n1==typeof n2)
+    return (n1+n2);
+    else
+    console.log("Invalid number");
+}
+sum((30,10));
+
+const sum =(num1,num2)=>num1+num2;
+
+const calculator=(num1,num2,opertion)=>{
+    return opertion(num1,num2)
+}
+calculator(10,20,sum);
+
+let arr=[1,2,3,4];
+arr.push('b','c',65,7);
+console.log(arr);
+
+let arr1=["tharun","ashwin","kanishkar","anirudh"];
+console.log(arr1.splice(5,2,"balasurya","harrish"));
+
+let arr2="tharun";
+console.log(arr2.slice(1,6));
+
+//split() vs join()
+
+let str4="sri eshwar college";
+//console.log(str4.split("r"));
+console.log(str4);
+
+let name2="madhu akshaya priya ishwarya saranya";
+let s=name.split(" ");
