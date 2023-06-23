@@ -1,0 +1,135 @@
+console.log(123);
+import{USER_DATA,addUser2,editMultipleParamInUser,editUser,deleteUser}from"./userModule.js";
+addUser(
+    {
+        id:897,
+        name:"thangam",
+        age:40,
+        email:'thangam@123' 
+    }
+);
+console.log(USER_DATA);
+
+//DOM Document object model
+
+document.body.innerHTML='hello'; 
+document.body.style.backgroundColor="lightblue";
+console.log(document.body.childNodes)
+console.log(documet.body.children)
+
+const allChild=document.body.children;
+allChild[1].style.color="green";
+
+ const allChild=document.body.children;
+ console.log(allChild);
+ setTimeout(
+ ()=>console.log(allChild[0].style.color="red",
+ allChild[0].innerText="red"),3000);
+ setTimeout(
+     ()=>console.log(allChild[1].style.color="green",allChild[1].innerText="green"),6000);
+     setTimeout(
+         ()=>console.log(allChild[2].style.color="yellow",allChild[2].innerText="yellow"),9000);
+ let bool=true;
+ setInterval(()=>{
+     allChild[2].style.color=(bool?"green":"orange");
+     bool=!bool;
+ },2000);
+
+// //SELECTOR
+
+ const tag=document.getElementsByClassName("ECE");
+ tag.innerText="SECE";
+ console.log(tag);
+ const id=document.getElementById("unique");
+ id.innerText="id based selection";
+
+const button=document.getElementById('login_button');
+const username=document.getElementById('user');
+const password=document.getElementById('pass');
+const form = document.getElementById('login');
+button.addEventListener('click',(event)=>{
+    console.log('click');
+})
+form.addEventListener('submit',(event)=>
+{
+    event.preventDefault();
+
+    console.log(username.value,password.value);
+})
+
+
+//UserModule
+export const USER_DATA=[
+{
+    id:123,
+    name:'viveka',
+    age:20,
+    email:'vive@123.com'
+
+},
+{
+id:346,
+name:'suba',
+age:19,
+email:'suba@12.com'
+},
+{
+id:567,
+name:'ammu',
+age:20,
+email:'ammu20@g.com'
+},
+{
+    id:907,
+    name:'karish',
+    age:13,
+    email:'karish@1234.com'
+}
+];
+
+
+//CRUD
+export const addUser2=(new_user)=>{
+    //add a new user in USER_DATA
+    USER_DATA.push(new_user);
+}
+export const editUser=(id,key,value)=>{
+//edit
+const user_index=USER_DATA.findIndex((user)=>user.id===id);
+if(user_index!=-1){
+    USER_DATA[user_index][key]=value;
+}
+}
+export const deleteUser=(id)=>{
+    //delete a particular user object from array
+    delete USER_DATA[id];
+}
+
+export const User1=
+    {
+    id:897,
+    name:"thangam",
+    age:40,
+    email:'thangam@123'
+}
+console.log(USER_DATA);
+deleteUser(2);
+console.log(USER_DATA);
+editUser(907,name,'jeeva');
+console.log(USER_DATA);
+
+ export const editMultipleParamInUser=(id=2,updateValue={
+    name:'ram',
+    age:18
+})=>{
+    const user_index=USER_DATA.findIndex((user)=>user.id==id);
+    if(user_index !=-1){
+        USER_DATA[user_index]={
+        ...USER_DATA[user_index],
+        ...updateValue
+    }
+}
+}
+editMultipleParamInUser();
+console.log(USER_DATA);
+
