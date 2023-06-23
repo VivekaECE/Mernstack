@@ -1,0 +1,174 @@
+//palindrome using reverse function
+
+let string='malayalam';
+let pal=string .split('');
+pal.reverse();
+console.log(pal);
+
+
+
+//array callback methods
+let obj2={
+    a:1,
+    b:2,
+    c:3,
+}
+for(let key in obj2)
+    console.log(key);
+    let d=['ram','sita','vive']
+      d.forEach(ele)=>;
+      console.log(ele);
+      */
+    
+       //map
+      let arr4=sece_name.map(ele=>ele.repeat(3));
+     console.log(arr4);
+      //filter
+
+      let ans_filter=numarr.filter(ele=>
+        {
+           return 100;
+       })
+      console.log(ans_filter)
+        
+    //     //task:Return array of names above the birth year 2002
+
+        let name_obj=[
+           {
+               name:"mahesan",
+       
+            dob:2002
+         },
+            {
+                name:"ajay",
+                dob:2003
+            },
+           {
+                name:'bala',
+                dob:2004
+            },
+           {
+               name:'surya',
+                dob:2004
+            },
+
+       ];
+    let ans_name=name_obj.map(ele=>{
+        if(ele.dob>=2003)return ele.ans_name
+     })
+    console.log(ans_name);
+    
+    //filter + map
+
+     let name_obj=[
+        {
+            name:"mahesan",
+           dob:2002
+        },
+        {
+             name:'ajay',
+          dob:2003
+        },
+        {
+            name:'bala',
+            dob:2004
+        },
+        {
+            name:'surya',
+            dob:2004
+        },
+     ]
+         let name_obj.filter(ele=>2003).map(ele=>ele.name);
+         console.log(ans_name);
+
+        //shallow copy
+        const array=[1,2,3,4,5];
+         const array2=array;
+       array[2]=200;
+       console.log(array2,array);
+        
+
+       const obj_cp3={
+            name:'sece',
+            year:'2023',
+            name:'sri eshwar'
+        };
+        console.log(obj_cp3);
+
+       let emp=[
+           {
+              name:'suba',
+              age:20,
+               salary:100000,
+            },
+            {
+              name:'arthi',
+               age:19,
+               salary:10000
+           },
+           {
+                 name:'jeeva',
+                age:23,
+               salary:500000
+           },
+           {
+              name:'ammu',
+               age:30,
+                salary:60000
+           },
+            {
+               name:'vive',
+                 age:27,
+                 salary:100000
+             }
+         ]
+         let obj_cp3=emp.filter(ele=>ele.salary>=25000).map(ele=>{}
+             return{name:ele.name,age:ele.age});
+        console.log(obj_cp3);
+
+
+
+let arr_nums=[10,20,30,40,50,60,70,80,90,100];
+let [a1,a2, ,a3,a4,...a5]=arr_nums;
+console.log(a1,a2,a3,a4,a5);
+
+object destructing;
+
+let obj_1={
+    clg_name:'sece',
+    year:2024,
+    city:'cbe',
+    dept:'mech',
+    lpa:'50lpa',
+    color:'blue'
+    
+};
+let {clg_name: college,year,city,color='green'}=obj_1//:rename operator
+console.log(college,year,city,color);//default parameter
+        
+setTimeout(()=> console.log('my name is viveka'),3000)
+setInterval(function() {
+    console.log('my name is viveka');},
+3000);
+
+promise
+state= pending,resolving,reject
+
+const promisey=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+       resolve('resolved')
+   },4000)
+})
+
+promisey
+.then((value)=>console.log(value))
+.catch(()=>console.log('error'))
+
+apiCall
+const apiCall=async()=>{
+
+  try{
+       const promise1=await fetch(console.log('https://jsonplaceholder.typicode.com/todos/1'));
+        const data=await
+    }
+};
