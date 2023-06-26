@@ -1,0 +1,116 @@
+console.log("Hello world");
+function add(num1,num2){
+    return num1+num2;
+}
+
+function sub(num1,num2){
+    return num1-num2;
+}
+
+
+function mul(num1,num2){
+    return num1*num2;
+}
+
+
+function div(num1,num2){
+    return num1/num2;
+}
+module.exports={add,sub,mul,div};
+let num1=parseInt(process.argv[2]);
+let num2=parseInt(process.argv[3]);
+console.log(add(num1,num2));
+console.log(sub(num1,num2));
+console.log(mul(num1,num2));
+console.log(div(num1,num2));
+
+
+console.log(process.argv[2]);
+
+
+const fs= require('fs');
+
+fs.readFile(`${__dirname}/states.txt`,(err,data)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log(data.toString());
+    }
+})
+
+const name = 'vive';
+console.log(`Hello.${name}!How are you?`);
+
+
+const name1 ='vive';
+console.log(__dirname+"states.txt");
+
+const inputData='hello hello hello';
+
+fs.writeFile(`${__dirname}/file1.text`,inputData,(err)=>{
+    if(err){
+        console.log("Error while writing");
+    }
+    else{
+        console.log("Done write function");
+    }
+});
+
+
+
+promise
+
+function read(filePath){
+    return new Promise((resolve,reject)=>{
+        fs.readFile(filePath,(err,data)=>{
+            if(err)
+            {
+                reject('Failed during read');
+            }
+            else{
+                resolve(data);
+            }
+        })
+    })
+}
+
+
+function write(filePath,inputdata){
+    return new Promise((resolve,reject)=>{
+        fs.writeFile(filePath,inputdata,(err)=>{
+            if(err)
+            {
+                reject('Failed during write');
+            }
+            else{
+                resolve('write completed');
+            }
+        })
+    })
+}
+
+
+read(`$({__dirname}/states.txt`)
+.then((data)=>{
+    console.log(data.toString());
+    return write (`${__dirname}/test.text`,data)
+    .then((data)=>{
+        console.log(data);
+    })
+}).catch((err)=>{
+    console.log(err);
+
+})
+
+
+const fileOperation = async()=>{
+    try{
+        const states=await read(`${__dirname}/states.txt`);
+        console.log(state.toString());
+        const result=await write(`${__dirname}/test2.txt`,states);
+        console.log(result);
+        }catch(error){
+            console.log(error);
+        }
+    }
