@@ -1,0 +1,99 @@
+//index.js
+
+let express = require("express");
+let app = express();
+
+app.get('/',(req,res)=>
+    console.log(req);
+    console.log(res);
+    res.send("This is get method")
+});
+{
+    res.send(`<div> <ul> 
+    
+        <li>Name:Viveka</li>
+       <li> Age:20</li>
+        <li>Dep:ECE</li>
+
+</ul>
+    </div>`);
+    
+});
+app.listen(8080,()=>{
+    console.log("Server connected");
+});
+  
+
+
+let express=require("express");
+let app=express();
+let router=require("./router");
+app.use(router);
+app.use(require("rounter"));
+app.listen(8080,()=>{
+    console.log("server connected");
+});
+
+
+let express = require('express');
+let path=require('path');
+let app = express();
+let port = 3002;
+const router=require("./router");
+app.use(router);
+router.get("/",(req,res)=>{
+     res.send("This Is GET Call!!");
+ });
+router.get("/login",(req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"));
+});
+ 
+app.listen(port, () => {
+  console.log(`Server connected`);
+});
+
+
+
+//router.js
+
+
+let express=require("express");
+
+let path=require("path");
+let router=express.Router();
+
+router.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"));
+});
+
+module.exports=router;
+
+
+let express=require("express");
+let path=require('path');
+const router=express.Router();
+
+router.get("/",(res,req)=>{
+    res.send("this is get call");
+});
+router.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"));
+
+})
+module.exports=router;
+
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Viveka</h1>
+    <button>Click</button>
+</body>
+</html>
+
+
